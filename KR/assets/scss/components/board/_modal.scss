@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+
+/* 시작 modal 팝업 */
+.modal_wrap {
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0px;
+  outline: 0;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+  position: relative;
+  .inner a {
+    display: block;
+  }
+}
+
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: #000;
+
+  &.fade {
+    filter: alpha(opacity = 0);
+    opacity: 0;
+  }
+
+  &.in {
+    filter: alpha(opacity = 50);
+    opacity: .5;
+  }
+}
+
+.modal-header {
+  padding: 15px;
+  text-align:right;
+  @include size(lg) {
+    padding:10px;
+  }
+
+  .close {
+    margin-top: -2px;
+    background:url(../images/icon/close_i_b.png) no-repeat center;
+    display: inline-block;
+    vertical-align: middle;
+    width:20px;
+    height:20px;
+    background-size:contain;
+    @include size(lg) {
+      width:15px;
+      height:15px;
+    }
+  }
+}
+
+.modal-title {
+  margin: 0;
+  line-height: 1.42857143;
+}
+
+.modal-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.modal-dialog {
+  .check-area {
+    text-align: left;
+    color: #333;
+  }
+
+  .modal-footer .pop-close {
+    padding-left: 15px;
+    text-align: right;
+    display: block;
+    font-weight: 500;
+    color: #333;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-left: 1px solid #ddd;
+  }
+}
+
+.modal-footer {
+  .btn + .btn {
+    margin-bottom: 0;
+    margin-left: 5px;
+  }
+
+  .btn-group .btn + .btn {
+    margin-left: -1px;
+  }
+
+  .btn-block + .btn-block {
+    margin-left: 0;
+  }
+}
+
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  opacity: .5;
+  z-index: 500;
+}
+
+.modal.start_pop {
+  position: absolute;
+  top: 110px;
+  left: 10px;
+  right: auto;
+  bottom: auto;
+  display: none;
+  z-index: 999999;
+  max-width: 800px;
+  width: auto;
+  height: auto;
+  cursor: move;
+  @include size(lg) {
+    top:50px !important;
+    left:2.5% !important;
+    max-width:95% !important;
+  }
+
+  .modal_standard {
+    position: relative;
+    display: block;
+    width: auto;
+    height: auto;
+  }
+}
+

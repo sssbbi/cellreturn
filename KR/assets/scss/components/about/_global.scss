@@ -1,0 +1,311 @@
+@charset "UTF-8";
+
+/* global */
+.global-map-wrap {
+  background:#f9f9f9;
+  padding:5em 0;
+  text-align: center;
+  @include size(lag) {
+    padding:3em 0;
+  }
+  @include size(sm) {
+    padding:2em 0;
+  }
+  .map-img {
+    position: relative;
+    width:100%;
+    max-width:1320px;
+    padding:0 20px;
+    margin:0 auto;
+    // @include size (note) {
+    //   width:85%;
+    //   margin:0;
+    // }
+    @include size (lag) {
+      width:100%;
+    }
+    @include size (sm) {
+      padding:0 15px;
+    }
+  }
+  .marker-bx {
+    @include size (sm) {
+      display: none;
+    }
+    > li {
+      position: absolute;
+      //cursor:pointer;
+      &.active,
+      &.on {
+        .nation {
+          color:$primary;
+        }
+      } 
+      &.kr {
+        right:18.2%;
+        top:39.7%;
+        .pop-info:after {
+          left:13%;
+        }
+      }
+      &.kz {
+        left:60.2%;
+        top:34%;
+        @include size (lag) {
+          left:67.5%;
+        }
+      }
+      &.uae {
+        left:61.1%;
+        top:47.4%;
+      }
+      &.usa {
+        left:14.8%;
+        top:42.2%;
+      }
+      &.vie {
+        left:74.7%;
+        top:55.5%;
+        @include size (lag) {
+          left:74.5%;
+          top:54.7%;
+        }
+      }
+      &.jp {
+        left:82.5%;
+        top:41.2%;
+      }
+      &.ch {
+        right:20.2%;
+        top:43.4%;
+        .pop-info:after {
+          left:5%;
+        }
+      }
+      &.si {
+        left:66.9%;
+        top:60.5%;
+        @include size (lag) {
+          left:73.8%;
+          top:60.1%;
+        }
+        .pop-info:after {
+          left:10.5%;
+        }
+      }
+      &.pa {
+        left:24.7%;
+        top:56.4%;
+      }
+      &.uk {
+        left:43.8%;
+        top:28%;
+        @include size (lag) {
+          left:45.8%;
+        }
+      }
+      &.it {
+        left:50.2%;
+        top:36.7%;
+      }
+      &.ru {
+        left:73%;
+        top:24%;
+      }
+      &.hk {
+        left:76.6%;
+        top:48.6%;
+      }
+      &.th {
+        left:67.3%;
+        top:53.5%;
+        @include size (lag) {
+          left:73%;
+          top:52.5%;
+        }
+      }
+      &.ms {
+        left:67.05%;
+        top:57.8%;
+        @include size (lag) {
+          left:73.05%;
+          top:57.8%;
+        }
+      }
+      &.br {
+        left:76.7%;
+        top:59.8%;
+      }
+      &.au {
+        left:79%;
+        top:83%;
+        @include size (lag) {
+          left: 85.5%;
+          top: 81%;
+        }
+      }
+      &.fr {
+        left:43.3%;
+        top:30.4%;
+        @include size (lag) {
+          left:47.3%;
+        }
+      }
+      &.ge {
+        left:50%;
+        top:28.5%;
+      }
+      > span {
+        display: inline-block;
+        &.nation {
+          @include size (lag) {
+            display: none;
+          }
+        }
+      }
+      .nation {
+        font-family:$maven;
+        font-weight:700;
+        color:#555;
+        letter-spacing:-0.03em;
+        .city {
+          font-weight:300;
+        }
+      }
+      .pin {
+        width:14px;
+        margin:0 3px;
+      }
+      .pin + .nation + .pop-info {
+        left:-12px;
+        &:after {
+          left:4.2%;  
+        }
+      }
+      .pop-info {
+        display: none;
+        position: absolute;
+        left:50%;
+        bottom:36px;
+        width:380px;
+        //transform:translateX(-50%);
+        text-align: left;
+        background:#fff;
+        box-shadow:0 5px 20px rgba(#000,0.15);
+        padding:20px;
+        z-index:1;
+        @include size (lag) {
+          position:fixed;
+          bottom:auto;
+          left:50% !important;
+          top:50%;
+          transform:translate(-50%,-50%);
+          width:500px;
+        }
+        &:after {
+          content:'';
+          width:12px;
+          height:12px;
+          background:#fff;
+          position: absolute;
+          bottom:-6px;
+          left:12%;
+          transform:rotate(45deg);
+          box-shadow:7px 4px 10px rgba(#000,0.2);
+          @include size (lag) {
+            width:auto;
+            height:auto;
+            content:'+';
+            font-size:40px;
+            font-weight:300;
+            color:#999;
+            bottom:auto;
+            left:auto !important;
+            right:10px;
+            top:0;
+            box-shadow:none;
+            background:none;
+          }
+        }
+        .nation {
+          font-size:em(20);
+          margin-bottom:10px;
+          color:$gray-1;
+          .city {
+            font-size:rem(16);
+          }
+        }
+        .info + .nation {
+          margin-top:15px;
+        }
+        ul {
+          li {
+            font-family:$maven;
+            font-weight:300;
+            letter-spacing:-0.04em;
+            /* &:not(.address) {
+              display: inline-block;
+            }
+            &.mail {
+              margin-left:14px;
+              position: relative;
+              &:before {
+                content:'';
+                position: absolute;
+                left:-9px;
+                top:7px;
+                width:1px;
+                height:10px;
+                background:#aaa;
+              }
+            } */
+            .tit {
+              font-weight:500;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.global-list {
+  .nation-title {
+    font-family:$maven;
+    font-size:em(24);
+    font-weight:700;
+    margin:em(60) 0 em(15);
+    line-height:1;
+    @include size (sm) {
+      margin:em(40) 0 em(10);
+    }
+    i {
+      display:inline-block;
+      vertical-align:bottom;
+      width:30px;
+      margin-right:10px;
+    }
+  }
+  .list {
+    padding:20px 0;
+    color:#555;
+    font-family:$maven;
+    font-weight:300;
+    border-top:1px solid $gray-1;
+    border-bottom:1px solid #ddd;
+    letter-spacing:-0.04em;
+    @include size (lg) {
+      padding:20px 15px;
+    }
+    & + .list {
+      border-top:0;
+    }
+    .name {
+      font-weight:500;
+      color:$gray-1;
+      padding-left:em(30);
+      @include size (lg) {
+        padding-left:0;
+      }
+    }
+  }
+}

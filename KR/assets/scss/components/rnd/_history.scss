@@ -1,0 +1,195 @@
+@charset "UTF-8";
+@function vw($val, $std:1920) {
+  @return ($val/($std/100))*1vw;
+}
+
+.rnd-history {
+  position: relative;
+  &-slider {
+    .swiper-slide {
+      position: relative;
+      .img {
+        width:percentage(1080/1920);
+        min-height:em(1000);
+        
+        @include size(lag) {
+          min-height:em(640);
+        }
+        @include size(lg) {
+          min-height:auto;
+          width:100%;
+          text-align:center;
+        }
+        
+        @media all and (min-width:1025px) {
+          @include imgToBg(cover);  
+        }
+      }
+      .txt {
+        position: absolute;
+        left:0;
+        right:0;
+        top:em(30);
+        bottom:0;
+        @include size(lag) {
+          top:0;
+        }
+        @include size(lg) {
+          position: relative;
+          left:auto;
+          right:auto;
+          top:auto;
+          bottom:auto;
+          padding:em(40) 0 em(70);
+        }
+        .wrapper2 {
+          height:100%;
+        }
+        .img-title {
+          position: absolute;
+          left:em(15);
+          bottom:em(45);
+          font-size: em(45);
+          font-weight: 700;
+          font-family: $maven;
+          color:$white;
+          line-height: 1.2;
+          @include size(note) {
+            bottom:em(25);
+            font-size: em(35);
+          }
+          @include size(lag) {
+            font-size: em(28);
+          }
+          @include size(lg) {
+            display: none;
+          }
+        }
+        .txt-inner {
+          margin-left:46.5%;
+          padding-left:12.5vw;
+          @include size(lg) {
+            margin-left: 0;
+            padding:0;
+          }
+          .year {
+            font-family: $maven;
+            font-size: em(220);
+            font-weight: 100;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            @include size(note) {
+              font-size: em(180);
+            }
+            @include size(lag) {
+              font-size: em(140);
+            }
+            @include size(lg) {
+              font-weight: 300;
+            }
+          }
+          .cont {
+            //padding-left:12.5vw;
+            &-year {
+              font-family: $maven;
+              font-size: em(24);
+              font-weight: 700;
+              @include size(lag) {
+                font-size: em(20);
+              }
+            }
+            &-title {
+              font-size: em(51);
+              font-weight: 100;
+              color:$gray-1;
+              margin:20px 0 35px;
+              line-height:1.15;
+              letter-spacing: -0.03em;
+              @include size(lag) {
+                font-size: em(36);
+                margin:15px 0 25px;
+              }
+            }
+            &-desc {
+              font-size: em(22);
+              font-weight: 300;
+              color:$gray-5;
+              line-height: 1.7;
+              letter-spacing: -0.03em;
+              @include size(lag) {
+                font-size: em(17);
+                line-height: 1.5;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &-year {
+    position: absolute;
+    left: em(50);
+    top:50%;
+    transform:translateY(-50%);
+    z-index: 1;
+    @include size(note) {
+      left: em(20)
+    }
+    @include size(lg) {
+      transform:none;
+      top:percentage(1000/1080);
+      margin-top: -650px;
+    }
+    @include size(sm) {
+      margin-top: -700px;
+    }
+    @include size(xs) {
+      margin-top: -750px;
+    }
+    .swiper-wrapper {
+      display: block;
+    }
+    .swiper-slide {
+      display: block;
+      opacity: 0.6;
+      font-family: $maven;
+      font-size: rem(14);
+      color:$white;
+      width:auto !important;
+      padding-left:38px;
+      position: relative;
+      margin: 20px 0;
+      line-height: 1;
+      transition:0.3s;
+      cursor:pointer;
+      @include size(lag) {
+        margin:15px 0;
+      }
+      @include size(xs) {
+        font-size: rem(13);
+      }
+      &.swiper-slide-thumb-active {
+        opacity: 1;
+        font-size: rem(30);
+        font-weight: 700;
+        padding-left:68px;
+        @include size(lag) {
+          font-size: rem(25);
+        }
+        &:before {
+          width:50px;
+        }
+      }
+      &:before {
+        content:'';
+        width:24px;
+        height:1px;
+        background:$white;
+        position: absolute;
+        left:0;
+        top:50%;
+        transition:0.3s;
+      }
+    }  
+  }
+}

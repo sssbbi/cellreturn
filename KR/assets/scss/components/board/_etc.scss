@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.status {
+  color:#666;
+  &.ing {
+    color:$primary;
+  }
+}
+

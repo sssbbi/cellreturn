@@ -1,0 +1,213 @@
+<? $dp0 = "main";
+include "../include/head.html" ?>
+</head>
+<body class="main">
+<? include "../include/header.html" ?>
+
+<main id="fullpage">
+	<section id="main-intro" class="section">
+		<div class="main-slider swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide item">
+					<img src="../assets/images/main/main_visual_1.jpg" alt="메인비주얼 이미지">
+				</div>
+				<div class="swiper-slide item">
+					<img src="../assets/images/main/main_visual_2.jpg" alt="메인비주얼 이미지">
+				</div>
+				<div class="swiper-slide item">
+					<img src="../assets/images/main/main_visual_3.jpg" alt="메인비주얼 이미지">
+				</div>
+			</div>
+			<div class="ui-bg ui-top-bg"></div>
+			<div class="ui-bg ui-right-bg"></div>
+			<div class="ui-bg ui-left-bg"></div>
+		</div>
+		<div class="swiper-pagination"></div>
+		<div class="main-slogan">
+			<div class="wrapper">
+				<p class="visual-title">GLOBAL<br> BEAUTY &amp;<br> HEALTH CARE<br> LEADER</p>
+				<hr class="line">
+				<p class="visual-txt">글로벌 No.1을 향해<br> 세계로 도약하는 셀리턴</p>
+			</div>
+		</div>
+	</section>
+	
+	<section id="main-about" class="section">
+		<div class="about-slide-bg">
+		</div>
+		<a href="javascript:void(0);" class="slide-hide"><span>Photo</span> <i class="xi-angle-up-thin"></i></a>
+		<div class="about-slide-wrap">
+			<div class="wrapper">
+				<div class="in-bx">
+					<h2 class="main-title">ABOUT US</h2>
+					<div class="row_10 about-list">
+						<div class="list col-grid-4">
+							<div class="inner">
+								<p class="tt">VISION</p>
+								<p class="desc">심장을 뛰게 하는<br> 셀리턴</p>
+							</div>
+						</div>
+						<div class="list col-grid-4">
+							<div class="inner">
+								<p class="tt">MISSION</p>
+								<p class="desc">건강한 아름다움을 위해<br> 존재하는 기업</p>
+							</div>
+						</div>
+						<div class="list col-grid-4">
+							<div class="inner">
+								<p class="tt">VALUE</p>
+								<p class="desc">열정, 소통, 책임, 신뢰<br> 4대 핵심가치</p>
+							</div>
+						</div>
+					</div>
+					<a href="javascript:void(0);" class="more-btn">MORE</a>
+					<p class="main-text">
+						인류의 아름다움과<br> 건강한 삶을 위한 기업<br> 셀리턴
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section id="main-product" class="section">
+		<div class="wrapper">
+			<div class="main-title-bx">
+				<h2 class="main-title">PRODUCT</h2>
+				<p class="main-text"><span>셀리턴은 오직</span><br> 효과만을 고집합니다</p>
+			</div>
+		</div>
+		<div class="product-slider-wrap">
+			<div class="product-slider swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide item">
+						<a href="javascript:void(0);" class="inner __c1">
+							<div class="bg-bx">
+								<p class="category-en">LED<br> MASK</p>
+								<p class="category">LED 마스크</p>
+								<p class="desc">당신만을 위한<br> 완성맞춤<br> LED 마스크</p>
+							</div>
+							<div class="prod-img"><img src="../assets/images/main/product_1.png" alt="led 마스크"></div>
+							<span class="link-btn"><i class="icon"></i></span>
+						</a>
+					</div>
+					<div class="swiper-slide item">
+						<a href="javascript:void(0);" class="inner __c2">
+							<div class="bg-bx">
+								<p class="category-en">NECK<br> CARE</p>
+								<p class="category">넥 케어</p>
+								<p class="desc">누구도<br> 상상 못한 360˚<br> LED 넥케어</p>
+							</div>
+							<div class="prod-img"><img src="../assets/images/main/product_2.png" alt="led 넥케어"></div>
+							<span class="link-btn"><i class="icon"></i></span>
+						</a>
+					</div>
+					<div class="swiper-slide item">
+						<a href="javascript:void(0);" class="inner __c3">
+							<div class="bg-bx">
+								<p class="category-en">HAIR<br> CARE</p>
+								<p class="category">헤어 케어</p>
+								<p class="desc">신개념 LED<br> 두피&amp;모발<br> 케어기기 입니다</p>
+							</div>
+							<div class="prod-img"><img src="../assets/images/main/product_3.png" alt="헤어 케어"></div>
+							<span class="link-btn"><i class="icon"></i></span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="main-footer" class="section fp-auto-height">
+		<? include "../include/footer.html" ?>
+	</section>
+
+</main>
+
+<script type="text/javascript">
+	$(function(){
+		createFullPage();
+		startVisual();
+	});
+
+	function startVisual() {
+		$('.ui-top-bg').stop().animate({'height' : '0'}, 1000, 'easeInOutCirc', function() {
+			$('#header').stop().animate({'opacity' : '1'}, 500, function(){
+				$('.ui-top-bg').css({'height' : '0'});
+			});
+		});
+		$('.ui-left-bg').stop().animate({'width' : '0'}, 1000, 'easeInOutCirc');
+		$('.ui-right-bg').stop().animate({'width' : '0'}, 1000, 'easeInOutCirc');
+	}
+
+	var swiper = new Swiper('.main-slider', {
+		slidesPerView: 1,
+		speed:1000,
+		loop: true,
+		effect: 'fade',
+		pagination: {
+	    el: '#main-intro .swiper-pagination',
+	    type: 'bullets',
+	    clickable: true
+	  },
+	  autoplay: {
+	    delay: 6000,
+	  },
+	});
+
+	var swiper = new Swiper('.product-slider', {
+		// slidesPerView: 1,
+		//loopedSlides: 10,
+		speed:1000,
+		loop: true,
+		spaceBetween: '50',
+		/*pagination: {
+	    el: '#main-intro .swiper-pagination',
+	    type: 'bullets',
+	    clickable: true
+	  },*/
+	  autoplay: {
+	    delay: 6000,
+	  }
+	});
+
+	//var FullSize = 1024;
+	function createFullPage() {
+	  $('#fullpage').fullpage({
+	    anchors: ['sec1','sec2','sec3','sec4','sec5','sec6'],
+	    //menu: '#nav',
+	    //scrollBar: true,
+	    scrollOverflow: true,
+	    responsiveWidth: 1025,
+		  afterLoad: function (origin, destination, direction) {
+		  	var logoSrc = $('#header .logo img').attr('on-src');
+			  var logoSrc_ori = $('#header .logo img').attr('ori-src');
+
+		  	if ( origin == 'sec1' ){
+		  		$('#header').removeClass('scroll');
+		  		$('#header .logo img').attr('src', logoSrc_ori)
+		  	} else {
+		  		$('#header').addClass('scroll');
+		  		$('#header .logo img').attr('src', logoSrc)
+		  	}
+				/*$(this).find('.wow').addClass('animated').css({
+					"visibility": "visible",
+					"animation-name": "fadeInUp"
+				});*/
+
+
+			  /*var navSrc = $('#header .nav_btn img').attr('on-src');
+			  var navSrc_ori = $('#header .nav_btn img').attr('ori-src');
+				if(origin == 'sec1'){
+					$('#header').removeClass('on');
+					$('#header .nav_btn img').attr('src', navSrc_ori)
+				} else {
+					$('#header').addClass('on');
+			    $('#header .nav_btn img').attr('src', navSrc)
+				}*/
+		  }
+	  });
+	};
+
+</script>
+</body>
+</html>

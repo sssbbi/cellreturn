@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+.bg-section {
+  background-repeat: no-repeat;
+  background-size:cover;
+  //background-attachment: fixed;
+  &.__bg1 {
+    background-image: url(../images/about/essential_bg1.jpg);
+    background-position: 10% 95%;
+    background-attachment: fixed;
+    @include size(lg) {
+      background-attachment: unset;
+      background-position: 55% 95%;
+    }
+  }
+  &.__bg2 {
+    background-position: center 0;
+    background-image: url(../images/about/essential_bg2.jpg);
+  }
+  .wrapper2 {
+    height:em(800);
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: column;
+    justify-content:center;
+    @include size(lag) {
+      height:em(650);
+    }
+  }
+}
+
+.essential {
+  &-value {
+    margin-top: em(180);
+    margin-left:-1px;
+    @include size(lg) {
+      margin-top: em(120);
+    }
+    @include size(xs) {
+      margin-top: em(90);
+    }
+    &-list {
+      margin-top: em(50);
+      @include size(lg) {
+        margin-top: em(25);
+      }
+      &-item {
+        border-left:1px solid #ccc;
+        position: relative;
+        @include size(lg) {
+          max-width:640px;
+          margin:20px auto 0;
+        }
+      }
+      &-img {
+
+      }
+      &-txt {
+        position: absolute;
+        left:0;
+        right:0;
+        top:50%;
+        text-align:center;
+        padding:0 15px;
+        color:$white;
+        @include size(lag) {
+          top:38%;
+        }
+        @include size(lg) {
+          top:auto;
+          bottom:em(50);
+        }
+        .number {
+          font-size: em(18);
+          font-weight: 300;
+          font-family: $maven;
+          @include size(lag) {
+            font-size: em(16);
+          }
+        }
+        .title-en {
+          font-size: em(36);
+          font-weight: 300;
+          font-family: $maven;
+          text-transform: uppercase;
+          @include size(note) {
+            font-size: em(32);
+          }
+          @include size(lag) {
+            font-size: em(26);
+          }
+        }
+        .title {
+          font-size: em(36);
+          margin:em(12) 0 em(20);
+          @include size(note) {
+            font-size: em(32);
+            margin:em(8) 0 em(15);
+          }
+          @include size(lag) {
+            font-size: em(26);
+          }
+        }
+        .desc {
+          color:$gray-c;
+          font-size: em(18);
+          font-weight: 100;
+        }
+      }
+    }
+  }
+}

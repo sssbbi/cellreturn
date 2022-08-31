@@ -1,0 +1,82 @@
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-size: 16px;
+  font-family:'Noto Sans KR', sans-serif;
+  width: 100%;
+  color: #222;
+  font-weight: 400;
+  line-height: 1.4;
+  -webkit-text-size-adjust: none;
+  word-break: keep-all;
+  @include size (lg) {
+    font-size:15px;
+  }
+  @include size (sm) {
+    font-size:14px;
+  }
+  @include size (xs) {
+    font-size:13px;
+  }
+}
+
+.wrapper {
+	width:100%;
+	max-width:1600px;
+	margin:0 auto;
+	position: relative;
+  @include size (note) {
+    padding:0 15px;
+  }
+}
+
+.wrapper2 {
+  width:100%;
+  max-width:1230px;
+  padding:0 15px;
+  margin:0 auto;
+  position: relative;
+  &.w-1400 {
+    max-width:1430px;
+  }
+}
+
+.hidden {
+  position: absolute;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  background: none;
+}
+.lg-show {
+  display: none;
+  @include size (lg) {
+    display: block !important;
+  }
+}
+.lg-hide {
+  @include size (lg) {
+    display: none !important;
+  }
+}
+.sm-show {
+  display: none;
+  @include size (sm) {
+    display: block !important;
+  }
+}
+.sm-hide {
+  @include size (sm) {
+    display: none !important;
+  }
+}

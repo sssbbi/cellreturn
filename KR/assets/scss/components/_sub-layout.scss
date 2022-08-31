@@ -1,0 +1,204 @@
+@charset "UTF-8";
+
+.sub-page-wrap {
+  overflow:hidden;
+  .sub-visu-wrap {
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    flex-direction:column;
+    height:em(380);
+    color:#fff;
+    position: relative;
+    overflow:hidden;
+    &.on {
+      .sub-visu-bg {
+        -webkit-transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        transform: scale(1, 1);
+      }
+      .visu-title {
+        -webkit-animation: fadeInUp 1s both 1.0s;
+        animation: fadeInUp 1s both 1.0s;
+        -webkit-animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        -webkit-animation-delay: 0.4s;
+        animation-delay: 0.4s;
+      }
+    }
+    .sub-visu-bg {
+      position: absolute;
+      left:0;
+      right:0;
+      top:0;
+      bottom:0;
+      background-repeat:no-repeat;
+      background-position:center;
+      background-size:cover;
+      background-image:url(../images/sub/sub_visu_1.jpg);
+      -webkit-transition: -webkit-transform 7.5s;
+      transition: -webkit-transform 7.5s;
+      -o-transition: transform 7.5s;
+      transition: transform 7.5s;
+      transition: transform 7.5s, -webkit-transform 7.5s;
+      -webkit-transform: scale(1.15, 1.15);
+      -ms-transform: scale(1.15, 1.15);
+      transform: scale(1.15, 1.15);
+      &.__3 {
+        background-image:url(../images/sub/sub_visu_3.jpg);
+      }
+      &.__4 {
+        background-image:url(../images/sub/sub_visu_4.jpg);
+      }
+      &.__5 {
+        background-image:url(../images/sub/sub_visu_5.jpg);
+      }
+      &.__6 {
+        background-image:url(../images/sub/sub_visu_6.jpg);
+      }
+      &.__7 {
+        background-image:url(../images/sub/sub_visu_7.jpg);
+      }
+    }
+    .visu-title {
+      position: relative;
+      z-index: 1;
+      font-family:$maven;
+      font-size:em(64);
+      font-weight:500;
+      margin-top:1em;
+      line-height: 1.15;
+      padding:0 15px;
+      @include size (sm) {
+        font-size:em(52);
+      }
+      @include size (xs) {
+        font-size:em(40);
+      }
+    }
+  }
+
+  .sub-menu-wrap {
+    position: relative;
+    z-index:1;
+    border-bottom:1px solid $gray-d;
+    .depth01 > a,
+    .depth03 {
+      display:none;
+    }
+    .depth02 {
+      display:none;
+      text-align:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      @include size (sm) {
+        flex-wrap:nowrap;
+        white-space: nowrap;
+        justify-content: flex-start;
+        overflow-x:auto;
+        overflow-y:hidden;
+      }
+      > li {
+        flex:1;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        height:80px;
+        @include size (lg) {
+          height:60px;
+        }
+        @include size (sm) {
+          display: inline-flex;
+          padding:0 10px;
+          margin:0 em(15);
+        }
+        > a {
+          display: flex;
+          align-items:center;
+          height:100%;
+          font-family:$maven;
+          font-weight:500;
+          font-size:em(20);
+          color:$gray-3;
+          position: relative;
+          line-height:1.2;
+          letter-spacing:-0.02em;
+          transition: color 0.3s;
+          position: relative;
+          @include size (lg) {
+            font-size:em(17);
+          }
+          &.on,
+          &:hover {
+            color:$primary;
+            &:after {
+              height:2px;
+            }
+          }
+          &:after {
+            content:'';
+            width:100%;
+            height:0;
+            position: absolute;
+            left:0;
+            right:0;
+            bottom:-1px;
+            background:$primary;
+            transition: height 0.3s;
+          }
+        }
+      }
+    }
+    .sm_0 {
+      display: none !important;
+    }
+  }
+
+  .sub-content {
+    padding:5em 0 em(130);
+    min-height:em(500);
+    @include size (sm) {
+      padding:3.5em 0 em(80) !important;
+      min-height:em(500);
+    }
+    @include size (xs) {
+      padding:3em 0 em(80) !important;
+    }
+    &.pd0 {
+      padding-bottom:0 !important;
+    }
+    .page-title {
+      font-family:$maven;
+      font-size:em(42);
+      font-weight:700;
+      text-align:center;
+      position: relative;
+      margin-bottom:1.5em;
+      line-height:1.2;
+      text-transform:uppercase;
+      @include size (sm) {
+        font-size:em(35);
+        margin-bottom: 1em;
+      }
+    }
+    .page-text {
+      font-size:em(24);
+      font-weight:300;
+      text-align: center;
+      margin:-1.875em 0 3em;
+      line-height:1.5;
+      @include size (sm) {
+        font-size:em(19);
+        margin:-1em 0 2.5em;
+      }
+      br {
+        @include size (sm) {
+          display: none;
+        }
+      }
+    }
+  }
+
+}

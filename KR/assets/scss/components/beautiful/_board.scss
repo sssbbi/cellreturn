@@ -1,0 +1,301 @@
+@charset "UTF-8";
+
+.board-wide-bg {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-wrap:wrap;
+  text-align:center;
+  align-items:center;
+  justify-content:center;
+  height:em(484);
+  color:$white;
+  margin-bottom: em(200);
+  @include size(lag) {
+    margin-bottom: em(150);
+  }
+  @include size(lg) {
+    margin-bottom: em(100);
+  }
+  @include size(sm) {
+    margin-bottom: 0;
+  }
+  &.__life {
+    background-image:url(../images/beautiful/life_wide_bg.jpg);
+  }
+  &.__mind {
+    background-image:url(../images/beautiful/mind_wide_bg.jpg);
+  }
+  &.__drama {
+    background-image:url(../images/beautiful/drama_wide_bg.jpg);
+  }
+  &.__concert {
+    background-image:url(../images/beautiful/concert_wide_bg.jpg);
+    @include size(sm) {
+      margin-bottom: em(70);
+    }
+  }
+  @include size(lag) {
+    height:em(400);
+  }
+  @include size(lg) {
+    background-attachment: unset;
+  }
+  @include size(sm) {
+    height:em(320);
+  } 
+  @include size(xs) {
+    height:em(280);
+  }
+  > p {
+    padding:0 em(15);
+    font-size: em(30);
+    font-weight: 100;
+    @include size(lag) {
+      font-size: em(26);
+    }
+    @include size(sm) {
+      font-size: em(22);
+    }
+    @include size(xs) {
+      font-size: em(18);
+    }
+    br {
+      @include size(lg) {
+        display: none;
+      }
+    }
+  }
+}
+
+.board-wrap {
+  position: relative;
+
+  .fix-menu-title {
+    font-size: em(80);
+    font-weight: 700;
+    font-family: $maven;
+    color:$primary;
+    text-align:center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    // height:85px;
+    height: calc(100vh - 110px);
+    z-index:99;
+    // transition:0.4s;
+    display: flex;
+    @include size(lag) {
+      font-size: em(70);
+    }
+    @include size(lg) {
+      font-size: em(60);
+      height: calc(100vh - 80px);
+    }
+    @include size(sm) {
+      display: none;
+    }
+    &.size-sm {
+      font-size: em(66);
+      letter-spacing: -0.03em;
+      @include size(lag) {
+        font-size: em(57);
+      }
+      @include size(lg) {
+        font-size: em(50);
+      }
+      div {
+        width:300px;
+        @include size(lag) {
+          width:240px;  
+        }
+        @include size(lg) {
+          width:190px;  
+        }
+      }
+    }
+
+    &.fix {
+      position: fixed;
+      top: 110px;
+      @include size(lg) {
+        top: 80px;
+      }
+    }
+
+    &.btm {
+      top: inherit;
+      bottom: 0;
+    }
+
+    div {
+      margin:auto;
+      width:280px;
+      height:85px;
+      line-height: 85px;
+      @include size(lag) {
+        width:220px;  
+      }
+      @include size(lg) {
+        width:170px;  
+      }
+    }
+  }
+
+  .board-container {
+    position: relative;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    @include size(sm) {
+      margin-right:-10px;
+      //display: block;
+    }
+
+    &-section {
+      flex:1 0 calc(50% - 140px);
+      max-width:calc(50% - 140px);
+      @include size(lag) {
+        flex:1 0 calc(50% - 110px);
+        max-width:calc(50% - 110px);
+      }
+      @include size(lg) {
+        flex:1 0 calc(50% - 85px);
+        max-width:calc(50% - 85px);
+      }
+      @include size(sm) {
+        flex:1 0 50% !important;
+        max-width:50% !important;
+        margin-top:em(80) !important;
+        padding-right:10px;
+      }
+      @include size(xs) {
+        flex:1 0 100% !important;
+        max-width:100% !important;
+      }
+      &.size-sm {
+        flex:1 0 calc(50% - 150px);
+        max-width:calc(50% - 150px);
+        @include size(lag) {
+          flex:1 0 calc(50% - 120px);
+          max-width:calc(50% - 120px);
+        }
+        @include size(lg) {
+          flex:1 0 calc(50% - 95px);
+          max-width:calc(50% - 95px);
+        }
+      }
+  
+      &:nth-of-type(even) {
+        margin-top: em(400);
+        .inner {
+          margin-left: 0;
+          margin-right:16vw;
+          @include size(note) {
+            margin-right: 10vw;
+          }
+          @include size(lag) {
+            margin-right: 5vw;
+          }
+          @include size(lg) {
+            margin-right: 15px;
+          }
+        }
+      }
+      .inner {
+        margin-left:16vw;
+        @include size(note) {
+          margin-left:10vw;
+        }
+        @include size(lag) {
+          margin-left:5vw;
+        }
+        @include size(lg) {
+          margin-left: 15px;
+        }
+        @include size(sm) {
+          margin:0 !important;
+          padding:0 15px;
+        }
+      }
+    }
+  }
+
+  
+  .title {
+    font-size: em(30);
+    font-weight: 700;
+    font-family: $maven;
+    text-transform: uppercase;
+    color:$gray-5;
+    margin-bottom: 10px;
+    @include size(lg) {
+      font-size: em(25);
+    }
+  }
+  .img {
+    width:100%;
+    height:0;
+    padding-bottom:52%;
+    @include imgToBg(cover);
+    &.__video-src {
+      &:hover {
+        &:before, &:after {
+          opacity: 1;
+        }
+      }
+      &:before {
+        content:'';
+        width:100%;
+        height:100%;
+        position: absolute;
+        left:0;
+        top:0;
+        background:rgba($black, 0.5);
+        opacity: 0;
+        transition:0.4s;
+        z-index: 1;
+      }
+      &:after {
+        content:'';
+        width:em(50);
+        height:em(50);
+        background:url(../images/icon/play_i.png) no-repeat center;
+        background-size:contain;
+        position: absolute;
+        left:50%;
+        top:50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        z-index: 2;
+        transition:0.4s;
+      }
+    }
+  }
+  .txt {
+    margin-top: em(20);
+    font-size: em(22);
+    font-weight: 300;
+    color:$gray-5;
+    line-height: 1.6;
+    text-align:justify;
+    @include size(lg) {
+      font-size: em(18);
+    }
+    @include size(sm) {
+      font-size: em(16);
+    }
+  }
+}
+
+.img-board-container {
+  .img {
+    width:100%;
+    height:0;
+    padding-bottom:53%;
+    @include imgToBg(cover);
+  }
+}

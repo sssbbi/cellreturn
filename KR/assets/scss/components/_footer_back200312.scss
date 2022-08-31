@@ -1,0 +1,80 @@
+#footer { 
+  background:#131313;
+  padding:5em 0 6em;
+  color:$gray-5;
+  text-transform: uppercase;
+  .copy-area {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:flex-end;    
+    margin-bottom:3em;
+    padding-bottom:3em;
+    border-bottom:1px solid rgba($white,0.08);
+    .site-name {
+      font-size:14px;
+      margin-bottom:30px;
+    }
+    .name {
+      color:$white;
+    }
+    .f-copyright {
+      li {
+        line-height:1.7;
+        font-size:13px;
+      }
+    }
+    .f-link {
+      li {
+        color:$white;
+        font-size:12px;
+        line-height:1.7;
+      }
+    }
+  }
+  .b-info-area {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    .cs-area {
+      font-size:12px;
+      .cs-bx {
+        display: inline-block;
+        margin-right:50px;
+      }
+      .center-tit {
+        color:$white;
+        font-weight:300;
+      }
+      .tel {
+        color:$white;
+        font-family:$maven;
+        font-weight:700;
+        font-size:24px;
+        margin-bottom:5px;
+      }
+      .desc {
+
+      }
+    }
+    .info-area {
+      color:$white;
+      text-align:right;
+      .address {
+        font-size:13px;
+        font-weight:300;
+        line-height:1.7;
+      }
+      .sns-link {
+        margin-top:35px;
+        li {
+          display: inline-block;
+          margin-left:2px;
+          img {
+            width:36px;
+          }
+        }
+      }
+    }
+  }
+}

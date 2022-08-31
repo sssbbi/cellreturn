@@ -1,0 +1,390 @@
+@charset "UTF-8";
+
+.history {
+  .tab {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    margin-bottom: em(100);
+    @include size(lg) {
+      margin-bottom: em(70);
+    }
+    li {
+      flex:0 1 auto;
+      text-align:center;
+      @include size(sm) {
+        flex:1 0 25%;
+        max-width:25%;
+      }
+      a {
+        height:70px;
+        display: flex;
+        align-items:center;
+        justify-content:center;
+        padding:0 em(25);
+        font-family: $maven;
+        color:$gray-5;
+        font-weight: 700;
+        font-size: em(20);
+        letter-spacing: -0.05em;
+        position: relative;
+        line-height:1.1;
+        @include size(lg) {
+          height:60px;
+          font-size: em(18);
+          padding:0 em(10);
+        }
+        &:after {
+          content:'';
+          position: absolute;
+          left:0;
+          right:0;
+          bottom:0;
+          height:0;
+          background:$primary;
+          transition:height 0.3s;
+        }
+        &.on,
+        &:hover {
+          color:$primary;
+          &:after {
+            height:2px;
+          }
+        }
+      }
+    }
+  }
+
+  &-wide-bg {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align:center;
+    margin-bottom: em(120);
+    @include size(lg) {
+      background-attachment: unset;
+    }
+    @include size(sm) {
+      margin-bottom: em(80);
+    }
+    .wrapper {
+      display: flex;
+      height:em(477);
+      flex-wrap:wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      @include size(lg) {
+        height:auto;
+        padding:em(60) 15px;
+      }
+      * {
+        line-height:1;
+      }
+    }
+    .year {
+      color:$white;
+      font-size: em(80);
+      font-family: $maven;
+      font-weight: 100;
+      @include size(lag) {
+        font-size: em(65);
+      }
+      @include size(lg) {
+        font-size: em(55);
+        font-weight: 300;
+      }
+    }
+    .title {
+      color:$primary;
+      font-size: em(30);
+      margin:em(12) 0;
+      padding-bottom: em(15);
+      position: relative;
+      line-height: 1.2;
+      @include size(lag) {
+        font-size: em(26);
+      }
+      @include size(lg) {
+        font-size: em(22);
+      }
+      &:after {
+        content:'';
+        width:27px;
+        height:1px;
+        background:$primary;
+        position: absolute;
+        left:50%;
+        bottom:0;
+        transform:translateX(-50%);
+      }
+    }
+    .desc {
+      font-size: em(22);
+      font-weight: 100;
+      color:$white;
+      line-height: 1.6;
+      @include size(lag) {
+        font-size: em(20);
+      }
+      @include size(lg) {
+        font-size: em(17);
+      }
+      br {
+        @include size(lag) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &-content {
+    padding:0 15px em(150);
+    position: relative;
+    &:before {
+      content:'';
+      width:1px;
+      position: absolute;
+      left:50%;
+      top:0;
+      bottom:0;
+      background:$gray-d;
+      @include size(sm) {
+        left:15px;
+      }
+    }
+    &-bx {
+      display: flex;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      padding-bottom: em(90);
+      position: relative;
+      line-height: 1;
+      @include size(sm) {
+        flex-direction: column-reverse;
+      }
+      &:before {
+        content:'';
+        position: absolute;
+        left:50%;
+        top:0;
+        bottom:0;
+        width:1px;
+        background:$primary;
+        @include size(sm) {
+          left:0;
+        }
+      }
+      &:last-child {
+        padding-bottom: 0;
+        &:before {
+          @include size(sm) {
+            bottom:15px;
+          }
+        }
+      }
+    }
+    &-img {
+      flex:1 0 50%;
+      width:50%;
+      max-width:580px;
+      padding-right:80px;
+      position: relative;
+      margin-top: -14px;
+      @include size(lag) {
+        max-width:560px;
+        padding-right:60px;
+      }
+      @include size(lg) {
+        padding-right:35px;
+      }
+      @include size(sm) {
+        flex:1 0 100%;
+        width:100%;
+        max-width:100%;
+        padding:em(60) 0 0 30px;
+      }
+
+      &.sm-d-n {
+        @include size(sm) {
+          display: none;
+        }
+      }
+      .slider-controller {
+        margin-top:em(20);
+        .swiper-button {
+          outline:none;
+          cursor:pointer;
+          display: inline-block;
+          vertical-align: middle;
+          width:49px;
+          height:25px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100% auto;
+          vertical-align: text-top;
+          transition:all 0.3s;
+          @include size(sm) {
+            width:35px;
+            background-position: center top 5px;
+          }
+          &.prev {
+            background-image:url(../images/paging/paging_button_prev.png);
+            &:hover {
+              background-image:url(../images/paging/paging_button_prev_hover.png);
+            }
+          }
+          &.next {
+            background-image:url(../images/paging/paging_button_next.png);
+            &:hover {
+              background-image:url(../images/paging/paging_button_next_hover.png);
+            }
+          }
+        }
+        .img-number {
+          display: inline-block;
+          vertical-align: middle;
+          margin:0 em(25);
+          span {
+            font-family: $maven;
+            font-size: em(24);
+            color:$gray-5;
+            font-weight: 300;
+            padding:0 3px;
+            letter-spacing:0.1em;
+            @include size(sm) {
+              font-size: em(20);
+            }
+            &.now {
+              font-weight: 700;
+              color:$primary;
+            }
+          }
+        }
+      }
+    }
+    &-txt {
+      flex:1 0 50%;
+      max-width:50%;
+      padding-left:50px;
+      @include size(lg) {
+        padding-left:30px;
+      }
+      @include size(sm) {
+        flex:1 0 100%;
+        max-width:100%;
+      }
+    }
+    .year {
+      font-family: $maven;
+      font-weight: 600;
+      color:$primary;
+      font-size: em(40);
+      margin-bottom: em(10);
+      position: relative;
+      top:-20px;
+      @include size(sm) {
+        margin-bottom:0;
+        font-size: em(32);
+        top:-12px;
+      }
+      &:before {
+        content:'';
+        position: absolute;
+        left:-55px;
+        top:15px;
+        width:11px;
+        height:11px;
+        border-radius:100%;
+        z-index: 1;
+        background:$primary;
+        @include size(lg) {
+          left:-35px;
+        }
+        @include size(sm) {
+          top:10px;
+        }
+      }
+    }
+    dl {
+      display: flex;
+      flex-wrap:wrap;
+      font-size: em(20);
+      position: relative;
+      top:10px;
+      margin-top: em(20);
+      line-height:1.2;
+      @include size(lg) {
+        font-size: em(18);
+      }
+      @include size(sm) {
+        margin-top: em(10);
+      }
+      &.st2 {
+        &:before {
+          content:'';
+          position: absolute;
+          left:-50px;
+          top:10px;
+          bottom:0;
+          width:1px;
+          background:$gray-d;
+          z-index: 1;
+          @include size(lg) {
+            left:-30px;
+          }
+          @include size(sm) {
+            display: none;
+          }
+        }
+      }
+      &:after {
+        content:'';
+        position: absolute;
+        left:-53px;
+        top:7px;
+        width:7px;
+        height:7px;
+        border-radius:100%;
+        z-index: 1;
+        background:$primary;
+        @include size(lg) {
+          left:-33px;
+        }
+        @include size(sm) {
+          top:5px;
+        }
+      }
+      dt {
+        flex:0 0 60px;
+        max-width:60px;
+        font-family: $maven;
+        @include size(lg) {
+          flex:0 0 45px;
+          max-width:45px;
+        }
+      }
+      dd {
+        flex:1 1 auto;
+        width:1%;
+        color:$gray-5;
+        font-weight: 300;        
+        .desc {
+          position: relative;
+          padding-left:10px;
+          margin-top: em(20);
+          &:first-child {
+            margin-top: 0;
+          }
+          &:before {
+            content:'·';
+            position: absolute;
+            left:0;
+            top:0;
+          }
+        }
+      }
+    }
+  }
+}

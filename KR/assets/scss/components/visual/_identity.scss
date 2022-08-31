@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+.identity {
+  text-align:center;
+  padding:em(100) 0;
+  @include size(sm) {
+    padding:em(70) 0;
+  }
+  &.__bg {
+    background:#f6f6f6;
+  }
+  &-title {
+    font-size: em(36);
+    font-weight: 500;
+    font-family: $maven;
+    margin-bottom: em(10);
+    line-height: 1.1;
+    @include size(sm) {
+      font-size: em(32);
+    }
+  }
+  &-txt {
+    font-size: em(22);
+    font-weight: 100;
+    line-height: 1.5;
+    margin-bottom:em(30);
+    @include size(sm) {
+      font-size: em(18);
+    }
+    br {
+      @include size(xs) {
+        display: none !important;
+      }
+    }
+  }
+
+  &-concept {
+    &-bx {
+      border:1px solid $gray-d;
+      background:url(../images/visual/concept_bx_bg.jpg) no-repeat -1px -1px;
+      height:em(240);
+      padding:em(25) em(35);
+      display: flex;
+      align-items:center;
+      justify-content: center;
+      img {
+        max-height:100%;
+      }
+    }
+  }
+
+  &-symbol {
+    .col-arrow {
+      img {
+        @include size(lg) {
+          width:40px;
+        }
+        @include size(xs) {
+          transform:rotate(90deg);
+        }
+      }
+    }
+  }
+
+  &-color {
+    &-bx {
+      padding:20px;
+      text-align:left;
+      height:em(200);
+      @include size(sm) {
+        padding:12px;
+        height:em(150);
+      }
+      &.__bg-black {
+        background:$black;
+        p {
+          font-size: em(18);
+          @include size(xs) {
+            font-size: em(16);
+          }
+        }
+      }
+      &.__bg-white {
+        background:$white;
+        border:1px solid $gray-d;
+        p {
+          font-size: em(18);
+          @include size(xs) {
+            font-size: em(16);
+          }
+        }
+      }
+      p {
+        font-family: $maven;
+        font-size: em(20);
+        @include size(xs) {
+          font-size: em(18);
+        }
+      }
+    }
+  }
+}

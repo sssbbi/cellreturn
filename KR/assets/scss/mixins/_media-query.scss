@@ -1,0 +1,49 @@
+$media: all;
+$feature: max-width;
+$notebook:1620px;
+$labtop:1280px;
+$tablet_row:1024px;
+$tablet: 768px;
+$phone: 480px;
+$phone_xxs: 380px;
+
+@mixin size($value) {
+  @if $value == note {
+    // @media all and (max-width: 1620px)
+    @media #{$media} and ($feature: $notebook) {
+      @content; // Yield the content inside the @include
+    }
+  }
+  @else if $value == lag {
+    // @media all and (max-width: 1280px)
+    @media #{$media} and ($feature: $labtop) {
+      @content; // Yield the content inside the @include
+    }
+  }
+  @else if $value == lg {
+    // @media all and (max-width: 1024px)
+    @media #{$media} and ($feature: $tablet_row) {
+      @content; // Yield the content inside the @include
+    }
+  }
+  @else if $value == sm {
+    // @media all and (max-width: 768px)
+    @media #{$media} and ($feature: $tablet) {
+      @content;
+    }
+  }
+  @else if $value == xs {
+    // @media all and (max-width: 480px)
+    @media #{$media} and ($feature: $phone) {
+      @content;
+    }
+  }
+  @else if $value == xxs {
+    // @media all and (max-width: 380px)
+    @media #{$media} and ($feature: $phone_xxs) {
+      @content;
+    }
+  }
+}
+
+

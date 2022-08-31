@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+@import "./variables";
+
+@import "./mixins/media-query";
+@import "./mixins/grid";
+@import "./mixins/imgToBg";
+@import "./mixins/map";
+@import "./mixins/em";
+
+@import "./components/board/common";
+@import "./components/board/modal";
+@import "./components/board/etc";
+@import "./components/board/list";
+@import "./components/board/view";
+@import "./components/board/search";
+@import "./components/board/paging";
+@import "./components/board/btn";
+

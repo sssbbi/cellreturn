@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+$base-font-size: 16;
+
+@function em($value, $base: $base-font-size){
+  @return ($value/$base)*1em;
+}
+
+@function rem($value, $base: $base-font-size){
+  @return ($value/$base)*1rem;
+}

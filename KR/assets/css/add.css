@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+/** 2020. 08. 22 update **/
+.archive-view-list {
+  padding: 0;
+}
+
+.archive-view-list .mfp-close {
+  top: 40px;
+}
+
+/** 2020. 08. 23 update **/
+/* .flag {
+  padding: 2em 0 ;
+}
+.flag ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.flag li {
+  padding: 24px;
+  text-align:center;
+}
+.flag li a {
+  display: inline-block;
+  padding: 4px;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 8px rgba(0,0,0,.2)
+}
+
+.flag img { width: 100px }
+
+@media all and (max-width:768px) {
+  .flag img { 
+    width: 70px;
+  }
+}
+
+@media all and (max-width:480px) {
+  .flag li {
+    padding:5px;
+    flex:1 0 25%;
+    max-width:25%;
+  }
+  .flag img { 
+    width: 55px;
+  }
+} */
+
+/** 2020. 09. 26 update **/
+.text-right {
+  text-align: right;
+}
+
+/** 2020. 09. 27 update **/
+.isPc {
+  display: block;
+}
+.isMb {
+  display: none;
+}
+@media all and (max-width: 480px) {
+  .isPc {
+    display: none;
+  }
+  .isMb {
+    display: block;
+  }
+}

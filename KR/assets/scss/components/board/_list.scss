@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+/* list */
+.table_board_for {
+  margin-top: 30px;
+  width: 100%;
+  border-top: 1px solid $gray-2;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  word-break: break-all;
+
+  thead {
+    @include size (lg) {
+      display: none;
+    }
+    th {
+      font-size:em(15);
+      font-weight:500;
+    }
+  }
+
+  a {
+    &:hover {
+      //color: $primary;
+      text-decoration: underline !important;
+    }
+  }
+  
+  tbody {
+    @include size (lg) {
+      text-align: left;
+    }
+    tr {
+      @include size (lg) {
+        border-top: 1px solid #ddd;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px 0;
+      }
+      &:first-child {
+        @include size (lg) {
+          border-top:0;
+        }
+      }
+    }
+  }
+  th, td {
+    padding: 20px 5px;
+    @include size (lg) {
+      padding: 12px 5px;
+    }
+  }
+
+  td {
+    font-size:em(16);
+    border-top: 1px solid #ddd;
+    text-align: center;
+    @include size (lg) {
+      text-align: left;
+      border: none;
+      padding: 5px 10px;
+
+      &:nth-child(1) {
+        display: none;
+      }
+      &:nth-child(n+2) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      &:nth-child(n+3):nth-child(-n+5) {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+      }
+    }
+  }
+
+  table, colgroup, col, tbody, tr, td, th {
+    @include size (lg) {
+      display: block;
+    }
+  }
+
+  .xi-volume-up, .xi-file-download {
+    font-size: 18px;
+    color: $primary;
+  }
+}

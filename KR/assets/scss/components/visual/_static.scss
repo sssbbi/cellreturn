@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.static {
+  background:url(../images/visual/static_bg_txt.jpg) no-repeat;
+  background-position: left 50% center;
+  @include size(lg) {
+    background-position: center;
+    background-size:140%;
+  }
+}

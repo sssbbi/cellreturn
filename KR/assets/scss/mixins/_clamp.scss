@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+@mixin clamp($font_size, $_num, $adjust:8) {
+  @if $_num == 1 {
+    display : block;
+    word-wrap : normal;
+    white-space   : nowrap;
+    overflow: hidden;
+    text-overflow : ellipsis;
+  }
+  @else {
+    $line_height : em($font_size + $adjust);
+    height: $line_height * $_num;
+    line-height: $line_height;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $_num;
+    -webkit-box-orient: vertical;
+  }
+}

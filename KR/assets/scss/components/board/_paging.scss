@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+/* paging*/
+.paging-area {
+  position: relative;
+  margin-top: 50px;
+  @include size (sm) {
+    margin-top:40px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+
+    li {
+      display: inline;
+      margin-left: 2px;
+      padding: 0;
+
+      a {
+        position: relative;
+        display: inline-block;
+        width: 46px;
+        height: 46px;
+        line-height: 44px;
+        color: $gray-2;
+        font-size:em(18);
+        font-family:$maven;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        background-repeat: no-repeat;
+        background-position: center center;
+        @include size (lg) {
+          width:40px;
+          height:40px;
+          line-height:38px;
+          font-size:em(16);
+        }
+        @include size (xs) {
+          width:32px;
+          height:32px;
+          line-height:30px;
+        }
+
+        &.active {
+          color: #fff;
+          border-color: $primary;
+          background: $primary;
+        }
+
+        &.prev-first {
+          background-image: url("../images/paging/prev-first.png");
+        }
+
+        &.prev {
+          background-image: url("../images/paging/prev.png");
+        }
+
+        &.next-last {
+          background-image: url("../images/paging/next-last.png");
+        }
+
+        &.next {
+          background-image: url("../images/paging/next.png");
+        }
+
+        span {
+          display: inline-block;
+          text-indent: -9999px;
+        }
+      }
+    }
+  }
+}
+
+
+.more-btn {
+  display: inline-block;
+  font-family:$maven;
+  color:$secondary;
+  writing-mode:vertical-rl;
+  font-size:em(30);
+  font-weight: 700;
+  padding:60px 12px 0;
+  background-repeat:no-repeat;
+  background-position:right top;
+  background-image:url(../images/main/more_btn_i.png);
+  background-size:13px;
+  transition:0.3s;
+  @include size (lg) {
+    font-size:em(24);
+    background-size:9px;
+    padding:48px 5px 0;
+  }
+  &:hover {
+    color:$primary;
+    background-image:url(../images/main/more_btn_i_on.png);
+  }
+}
+
+.paging {
+  @include size(sm) {
+    text-align:center;
+  }
+  &.mt {
+    margin-top: em(50);
+  }
+  &-button {
+    width:49px;
+    height:25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+    vertical-align: text-top;
+    transition:all 0.3s;
+    @include size(sm) {
+      width:35px;
+      background-position: center top 5px;
+    }
+    &.prev {
+      background-image:url(../images/paging/paging_button_prev.png);
+      &:hover {
+        background-image:url(../images/paging/paging_button_prev_hover.png);
+      }
+    }
+    &.next {
+      background-image:url(../images/paging/paging_button_next.png);
+      &:hover {
+        background-image:url(../images/paging/paging_button_next_hover.png);
+      }
+    }
+  }
+  &-txt {
+    display: inline-block;
+    vertical-align: middle;
+    margin:0 em(25);
+    span {
+      font-family: $maven;
+      font-size: em(24);
+      color:$gray-5;
+      font-weight: 300;
+      padding:0 3px;
+      letter-spacing:0.1em;
+      @include size(sm) {
+        font-size: em(20);
+      }
+      &.now {
+        font-weight: 700;
+        color:$primary;
+      }
+    }
+  }
+  
+}
